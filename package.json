@@ -1,0 +1,19 @@
+{
+  "name": "javascript-ds-algo",
+  "version": "1.0.0",
+  "description": "Data structures and Algorithms implementation in Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkpawan321/javascript-ds-algo.git"
+  },
+  "author": "Pawan R K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rkpawan321/javascript-ds-algo/issues"
+  },
+  "homepage": "https://github.com/rkpawan321/javascript-ds-algo#readme"
+}
