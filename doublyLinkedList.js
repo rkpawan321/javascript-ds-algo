@@ -11,6 +11,7 @@ class DoublyLinkedList {
     constructor() {
         this.head = null;
         this.tail = null;
+        this.size = 0;
     }
 
     prepend(data) {
@@ -24,7 +25,7 @@ class DoublyLinkedList {
         if (!this.tail) {
             this.tail = newNode;
         }
-
+        this.size++; //because we added one node 
         return this;
     }
 
@@ -35,6 +36,7 @@ class DoublyLinkedList {
         if (!this.head) {
             this.head = newNode;
             this.tail = newNode;
+            this.size++; //because we added one node 
             return this;   // This will simply return EXIT you off from this method
         }
 
@@ -45,6 +47,7 @@ class DoublyLinkedList {
         //Define the newNode to be appended
         newNode.previous = this.tail;  // Attach new tail's prevois to old tail
         this.tail = newNode;  //This is the new tail which has previous value = old tail's value
+        this.size++; //because we added one node 
         return this;
     }
 
@@ -57,11 +60,13 @@ class DoublyLinkedList {
         if (this.head.data === data) {
             this.head = this.head.next;
             this.head.previous = null;  //Making the newly turened head's previous value = null (As earlier it eas not head , it had a a previous)
+            this.size--; //As a node is removed
             return;
         }
         if (this.tail.data === data) {
             this.tail = this.tail.previous;
             this.tail.next = null;  //Making the newly turened tail's next value = null (As earlier it eas not tail , it had a a next)
+            this.size--; //As a node is removed
             return;
         }
         let current = this.head;
@@ -69,6 +74,7 @@ class DoublyLinkedList {
             if (current.next.data === data) {
                 current.next.next.previous = current;
                 current.next = current.next.next;
+                this.size--; //As a node is removed
                 return;
             }
             current = current.next;
@@ -78,6 +84,7 @@ class DoublyLinkedList {
     printMyList(string) {
         let current = this.head;
         console.log(string);
+        console.log(`Size: ${this.size}`)
         console.log(`Head: [data: ${this.head.data}, next: ${this.head.next.data}]`);
         console.log(`Tail: [data: ${this.tail.data}, previous: ${this.tail.previous.data}]`);
         while (current) {
