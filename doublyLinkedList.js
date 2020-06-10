@@ -93,6 +93,6 @@ ll.append(60);
 
 ll.printMyList('Before deleting');
 
-ll.delete(10);
+ll.delete(30);
 
 ll.printMyList('After deleting');
