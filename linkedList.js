@@ -28,11 +28,12 @@ class LinkedList {
     }
 
     delete(data) {
+        console.log(`We are deleting ${data}`);
         if (!this.head) {
             return;
         }
         if (this.head.data === data) {
-            this.head = head.next;
+            this.head = this.head.next;
             return;
         }
         let current = this.head;
@@ -48,8 +49,8 @@ class LinkedList {
     printMyList(string) {
         let current = this.head;
         console.log(string);
-        while (current.next) {
-            console.log(current.data);
+        while (current) {
+            console.log(`[ ${current.data} , next: ${current.next && current.next.data ? current.next.data : null}]`);
             current = current.next;
         }
     }
@@ -67,5 +68,5 @@ ll.printMyList('Before deleting');
 
 ll.delete(30);
 
-ll.printMyList('After deleting 30');
+ll.printMyList('After deleting');
 // console.table(JSON.stringify(ll));
