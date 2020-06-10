@@ -14,6 +14,7 @@ class DoublyLinkedList {
     }
 
     prepend(data) {
+        console.log(`We are prepending ${data}`);
         const newNode = new DoublyLinkedListNode(data, this.head);
         if (this.head) {
             this.head.previous = newNode; // If head exists, make a new head and make (old head's previous === newHead)
@@ -28,6 +29,7 @@ class DoublyLinkedList {
     }
 
     append(data) {
+        console.log(`We are appending ${data}`);
         const newNode = new DoublyLinkedListNode(data);
 
         if (!this.head) {
@@ -48,6 +50,7 @@ class DoublyLinkedList {
 
     delete(data) {
         console.log(`We are deleting ${data}`);
+        console.log('*_________________________________________________*');
         if (!this.head) {
             return;
         }
@@ -75,10 +78,13 @@ class DoublyLinkedList {
     printMyList(string) {
         let current = this.head;
         console.log(string);
+        console.log(`Head: [data: ${this.head.data}, next: ${this.head.next.data}]`);
+        console.log(`Tail: [data: ${this.tail.data}, previous: ${this.tail.previous.data}]`);
         while (current) {
-            console.log(`[ previous: ${current.previous && current.previous.data ? current.previous.data : null}, ${current.data} , next: ${current.next && current.next.data ? current.next.data : null}]`);
+            console.log(`[ previous: ${current.previous && current.previous.data ? current.previous.data : null}, data: ${current.data} , next: ${current.next && current.next.data ? current.next.data : null}]`);
             current = current.next;
         }
+        console.log('*_________________________________________________*');
     }
 
 }

@@ -11,10 +11,12 @@ class LinkedList {
     }
 
     prepend(data) {
+        console.log(`We are prepending ${data}`);
         this.head = new LinkedListNode(data, this.head)
     }
 
     append(data) {
+        console.log(`We are appending ${data}`);
         const newNode = new LinkedListNode(data)
         if (!this.head) {
             this.head = newNode;
@@ -29,6 +31,7 @@ class LinkedList {
 
     delete(data) {
         console.log(`We are deleting ${data}`);
+        console.log('*_________________________________________________*');
         if (!this.head) {
             return;
         }
@@ -49,10 +52,13 @@ class LinkedList {
     printMyList(string) {
         let current = this.head;
         console.log(string);
+        console.log(`Head: [data: ${this.head.data}, next: ${this.head.next.data}]`)
         while (current) {
-            console.log(`[ ${current.data} , next: ${current.next && current.next.data ? current.next.data : null}]`);
+            console.log(`[ data: ${current.data} , next: ${current.next && current.next.data ? current.next.data : null}]`);
             current = current.next;
         }
+        console.log('*_________________________________________________*');
+
     }
 }
 
