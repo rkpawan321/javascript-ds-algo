@@ -21,7 +21,7 @@ Geeks for Geeks YT Link : https://youtu.be/bbbnyIDHeR8
 mycodeschool : https://www.youtube.com/watch?v=K7J3nCeRC80
 
 //rk ==> reverseTraversal 0f LL  using RECURSION
-//==> BASICALLY IT WORKS ON THE PRINCIPLE like ==> function adds into stack and gets completely executed later !!!
+//==> BASICALLY IT WORKS ON THE PRINCIPLE like ==> all recursive functions one by one adds into stack and gets completely executed later !!!
 // For more information watch : https://youtu.be/K7J3nCeRC80?t=689
 
 
