@@ -1,6 +1,8 @@
 # javascript-ds-algo
 
 Important code snippets for linked-list, doubly-linked-lists:
+
+
 const node = new LinkedListNode(data);
 
 FOR INDEXED
