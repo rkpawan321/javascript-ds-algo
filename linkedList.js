@@ -4,7 +4,6 @@ class LinkedListNode {
         this.next = next;   //Dont make this mistake (DONT write this.next = null)
     }
 }
-
 class LinkedList {
     constructor() {
         this.head = null;
@@ -135,7 +134,7 @@ class LinkedList {
         let current = this.head;
         console.log(string);
         console.log(`Size: ${this.size}`)
-        console.log(`Head: [data: ${this.head.data}, next: ${this.head.next.data}]`)
+        console.log(`Head: [data: ${this.head && this.head.data ? this.head.data : null}, next: ${this.head && this.head.next && this.head.next ? this.head.next.data : null}]`)
         let count = 0; //Just to know which index is the element
         while (current) {
             console.log(`INDEX: ${count} :: [ data: ${current.data} , next: ${current.next && current.next.data ? current.next.data : null}]`);
@@ -145,20 +144,37 @@ class LinkedList {
         console.log('*_________________________________________________*');
 
     }
+
+    deleteHead() {
+        if(!this.head) {
+            return null;
+        }
+        const deletedHead = this.head;
+
+        if(this.head.next) {
+            this.head = this.head.next;
+        } else {
+            this.head = null;
+        }
+        this.size--; //As a node is removed
+        return deletedHead; //This is because you need to return what value is delted from the linkedlist.
+    }
 }
 
-const ll = new LinkedList();
-ll.prepend(10);
-ll.append(20);
-ll.append(30);
-ll.append(40);
-ll.append(50);
-ll.append(60);
+// const ll = new LinkedList();
+// ll.prepend(10);
+// ll.append(20);
+// ll.append(30);
+// ll.append(40);
+// ll.append(50);
+// ll.append(60);
 
-ll.printMyList('Before deleting');
+// ll.printMyList('Before deleting');
 
 // ll.delete(30);
 // ll.getAt(2);
-ll.removeAt(3);
-ll.printMyList('After changing');
+// ll.removeAt(3);
+// ll.printMyList('After changing');
 // console.table(JSON.stringify(ll));
+
+module.exports = LinkedList;
