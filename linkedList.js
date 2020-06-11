@@ -147,18 +147,20 @@ class LinkedList {
     }
 }
 
-const ll = new LinkedList();
-ll.prepend(10);
-ll.append(20);
-ll.append(30);
-ll.append(40);
-ll.append(50);
-ll.append(60);
+// const ll = new LinkedList();
+// ll.prepend(10);
+// ll.append(20);
+// ll.append(30);
+// ll.append(40);
+// ll.append(50);
+// ll.append(60);
 
-ll.printMyList('Before deleting');
+// ll.printMyList('Before deleting');
 
 // ll.delete(30);
 // ll.getAt(2);
-ll.removeAt(3);
-ll.printMyList('After changing');
+// ll.removeAt(3);
+// ll.printMyList('After changing');
 // console.table(JSON.stringify(ll));
+
+module.exports = LinkedList;
